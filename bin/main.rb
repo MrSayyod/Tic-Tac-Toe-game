@@ -25,3 +25,19 @@ else player1_select == "O"
   player2_select = "X"
 end
 puts "Welcome to the game Tic Tac Toe, #{player1_name} and #{player2_name}! #{player1_name} plays with #{player1_select} and #{player2_name} plays with #{player2_select}. You can start now. Happy gaming)"
+
+class Board
+  def initialize(player1, player2)
+     @player1 = player1
+     @player2 = player2
+
+  end
+  def display_board
+    puts row = ["   " "|" "   " "|" "   "]
+    puts separator = "-----------"
+    puts row
+    puts separator
+    puts row
+  end
+  display_board
+end

@@ -32,12 +32,27 @@ class Board
      @player2 = player2
 
   end
-  def display_board
-    puts row = ["   " "|" "   " "|" "   "]
+  def display_board(array)
+    array = Array.new(9, "")
+    puts "  " + array[0] + " | " + array[1] + " | " + array[2]
     puts separator = "-----------"
-    puts row
+    puts "  " + array[3] + " | " + array[4] + " | " + array[5]
     puts separator
-    puts row
+    puts "  " + array[6] + " | " + array[7] + " | " + array[8]
   end
-  display_board
+  def winning
+  [[array[0], array[1], array[2]],
+  [array[0], array[3], array[6]],
+  [array[1], array[4], array[7]],
+  [array[2], array[5], array[8]],
+  [array[3], array[4], array[5]],
+  [array[6], array[7], array[8]],
+  [array[0], array[4], array[8]],
+  [array[2], array[4], array[6]]]
+  end
+  def checking
+    array.empty? ? true : puts("This cell was taken!!! Please, choose another option)")
+  end
 end
+arr=Board.new("#{player1_name}", "#{player2_name}")
+arr.display_board(Array)

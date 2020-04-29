@@ -51,8 +51,43 @@ class Board
      [array[2], array[4], array[6]]]
   end
 
-  def checking
-    array.empty? ? true : puts('This cell was taken!!! Please, choose another option)')
+  def checking1
+    index = player1_choice - 1
+    if array[index].empty? == true
+      array[index] = player1_select
+    else
+      puts 'This cell was taken!!! Please, choose another option)'
+    end
+  end
+
+  def checking2
+    index = player2_choice - 1
+    if array[index].empty? == true
+      array[index] = player2_select
+    else
+      puts 'This cell was taken!!! Please, choose another option)'
+    end
+  end
+
+  def turn
+    until array.none?('') == false
+      puts "It is your turn #{player1_name}. Please, choose numbers between 1 and 9."
+      player1_choice = gets.chomp.to_i
+      if (1..9).include?(player1_choice) == true
+        player1_choice.checking1
+      else
+        puts 'You selected undefined character.  Please, choose numbers between 1 and 9.'
+      end
+      display_board(Array)
+      puts "It is your turn #{player2_name}. Please, choose numbers between 1 and 9."
+      player2_choice = gets.chomp.to_i
+      if (1..9).include?(player2_choice) == true
+        player2_choice.checking2
+      else
+        puts 'You selected undefined character.  Please, choose numbers between 1 and 9.'
+      end
+      display_board(Array)
+    end
   end
 end
 arr = Board.new(player1_name.to_s, player2_name.to_s)

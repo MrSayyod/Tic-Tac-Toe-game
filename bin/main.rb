@@ -51,6 +51,15 @@ class Board
      [array[2], array[4], array[6]]]
   end
 
+  winning.each do |combos|
+    if combos == player1_select 
+      puts player1_name
+    elsif combos == player2_select
+      puts player2_name
+    else
+      puts "Tie! Enter q to quit game."
+    end
+
   def checking1
     index = player1_choice - 1
     if array[index].empty? == true

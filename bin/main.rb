@@ -52,13 +52,14 @@ class Board
   end
 
   winning.each do |combos|
-    if combos == player1_select 
+    if combos == player1_select
       puts player1_name
     elsif combos == player2_select
       puts player2_name
     else
-      puts "Tie! Enter q to quit game."
+      puts 'Tie! Enter q to quit game.'
     end
+  end
 
   def checking1
     index = player1_choice - 1

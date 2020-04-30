@@ -58,4 +58,4 @@ class Board
       puts 'This cell was taken!!! Please, choose another option)'
     end
   end
-  end
+end

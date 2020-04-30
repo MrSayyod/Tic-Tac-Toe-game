@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-require "../lib/board.rb" 
+require '../lib/board.rb'
 puts 'Hello world!'
 puts 'Please, enter your name, Player 1'
 player1_name = gets.chomp.capitalize

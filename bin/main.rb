@@ -51,13 +51,15 @@ class Board
      [array[2], array[4], array[6]]]
   end
 
-  winning.each do |combos|
-    if combos == player1_select
-      puts player1_name
-    elsif combos == player2_select
-      puts player2_name
-    else
-      puts 'Tie! Enter q to quit game.'
+  def combination
+    winning.each do |combos|
+      if combos == player1_select
+        puts player1_name
+      elsif combos == player2_select
+        puts player2_name
+      else
+        puts 'Tie! Enter q to quit game.'
+      end
     end
   end
 

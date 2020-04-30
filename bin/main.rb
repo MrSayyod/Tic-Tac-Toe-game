@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
-require '../lib/board.rb'
-puts 'Hello world!'
+require_relative '../lib/board.rb'
 puts 'Please, enter your name, Player 1'
 player1_name = gets.chomp.capitalize
 puts 'Please, select X or O'

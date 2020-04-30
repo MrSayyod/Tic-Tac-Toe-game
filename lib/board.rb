@@ -24,21 +24,8 @@ class Board
      [array[2], array[4], array[6]]]
   end
 
-  def combination
-    winning.each do |combos|
-      if combos == player1_select
-        puts player1_name
-      elsif combos == player2_select
-        puts player2_name
-      else
-        puts 'Tie! Enter q to quit game.'
-      end
-    end
-  end
-
   def current(*)
     switch = 0
-    # current_player = []
     until switch == 9
       switch += 1
       current_player = if switch.odd?
@@ -48,6 +35,18 @@ class Board
                        end
     end
     current_player
+  end
+
+  def combination
+    winning.each do |combos|
+      if combos == player1_select
+        puts "#{player1_name} wins"
+      elsif combos == player2_select
+        puts "#{player2_name} wins"
+      else
+        puts 'DRAW! Friendship wins)'
+      end
+    end
   end
 
   def checking

@@ -27,16 +27,16 @@ puts "Welcome to the game Tic Tac Toe, #{player1_name} and #{player2_name}! #{pl
 
 def turn
   until array.none?('') == false
-    if array.none?('')
-      puts "It is your turn #{current_player[0]}. Please, choose numbers between 1 and 9."
-      current_player[2] = gets.chomp.to_i
-      if (1..9).include?(current_player[2])
-        current_player[2].checking1
-      else
-        puts 'You selected undefined character.  Please, choose numbers between 1 and 9.'
-      end
-      display_board(Array)
+    next unless array.none?('')
+
+    puts "It is your turn #{current_player[0]}. Please, choose numbers between 1 and 9."
+    current_player[2] = gets.chomp.to_i
+    if (1..9).include?(current_player[2])
+      current_player[2].checking1
+    else
+      puts 'You selected undefined character.  Please, choose numbers between 1 and 9.'
     end
+    display_board(Array)
   end
 end
 arr = Board.new(player1_name.to_s, player2_name.to_s)

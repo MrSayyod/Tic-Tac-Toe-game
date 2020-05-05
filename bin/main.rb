@@ -12,10 +12,10 @@ puts '    -------------'
 puts '  7 | X | O | X | 9'
 puts '    -------------'
 puts '      7   8   9  '
-puts "In this game, there are only two letters to play with 'X' and 'O'".
-puts
-puts "At the begining of the game, player 1 will choose either 'X' or 'O'".
-puts
+puts "In this game, there are only two letters to play with 'X' and 'O'"
+  .puts
+puts "At the begining of the game, player 1 will choose either 'X' or 'O'"
+  .puts
 game = Game.new([' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '])
 
 puts 'Enter name of player 1'

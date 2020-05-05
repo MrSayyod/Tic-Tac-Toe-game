@@ -22,11 +22,6 @@ Lint/RaiseException:
   Enabled: false
 Lint/StructNewOverride:
   Enabled: false
-<<<<<<< HEAD
-=======
-Lint/ScriptPermission:
-  Enabled: false
->>>>>>> develop
 
 Style/HashEachMethods:
   Enabled: false

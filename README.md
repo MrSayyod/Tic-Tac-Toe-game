@@ -1,7 +1,5 @@
 # Tic-Tac-Toe-game
 Project: OOP by Microverse [Collaborative Project] (created with Saidov Sayyod and Hermela Fikre)
-# Tic-Tac-Toe-game
-Project: OOP by Microverse [Collaborative Project] (created with Saidov Sayyod and Hermela Fikre)
 
 ## Instructions and Game rules
 # Instructions 
@@ -26,7 +24,7 @@ To get a local copy up and running follow these simple
 example steps.
     Clone the project unto your local machine
     cd into the project directory
-    run main.rb in terminal
+    run bin/main.rb in terminal
 
 # Contributing
 

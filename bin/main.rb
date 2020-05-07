@@ -22,7 +22,11 @@ while continue
 
   puts 'Enter name of player 1'
   input1 = gets.chomp.capitalize
-  puts 'enter a letter to play with'
+  while input1.empty?
+    puts 'Please, enter the name!'
+    input1 = gets.chomp.capitalize
+  end
+  puts 'Enter a letter to play with'
   player_1_letter = gets.chomp.upcase
   until %w[X O].include?(player_1_letter)
     puts "Please, choose 'x' or 'o'"
@@ -37,6 +41,10 @@ while continue
 
   puts 'Enter name of player 2'
   input2 = gets.chomp.capitalize
+  while input2.empty?
+    puts 'Please, enter the name!'
+    input2 = gets.chomp.capitalize
+  end
   player_2_letter = 'O' if player_1_letter == 'X'
   player_2_letter = 'X' if player_1_letter == 'O'
   puts "#{input2} will be playing with #{player_2_letter}"

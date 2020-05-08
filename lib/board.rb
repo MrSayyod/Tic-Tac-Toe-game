@@ -1,60 +1,24 @@
 class Board
-  def initialize(player1, player2)
-    @player1 = player1
-    @player2 = player2
+  def self.winner?(arr, player)
+    return true if [
+      arr[0..2].all?(player),
+      arr[3..5].all?(player),
+      arr[6..8].all?(player),
+
+      [arr[0], arr[3], arr[6]].all?(player),
+      [arr[1], arr[4], arr[7]].all?(player),
+      [arr[2], arr[5], arr[8]].all?(player),
+
+      [arr[0], arr[4], arr[8]].all?(player),
+      [arr[6], arr[4], arr[2]].all?(player)
+    ].any?
+
+    false
   end
 
-  def display_board(_element)
-    array = Array.new(9, '')
-    puts '  ' + array[0] + ' | ' + array[1] + ' | ' + array[2]
-    puts separator = '-----------'
-    puts '  ' + array[3] + ' | ' + array[4] + ' | ' + array[5]
-    puts separator
-    puts '  ' + array[6] + ' | ' + array[7] + ' | ' + array[8]
-  end
+  def self.draw?(arr)
+    return false if arr.include?(' ')
 
-  def winning
-    [[array[0], array[1], array[2]],
-     [array[0], array[3], array[6]],
-     [array[1], array[4], array[7]],
-     [array[2], array[5], array[8]],
-     [array[3], array[4], array[5]],
-     [array[6], array[7], array[8]],
-     [array[0], array[4], array[8]],
-     [array[2], array[4], array[6]]]
-  end
-
-  def current(*)
-    switch = 0
-    until switch == 9
-      switch += 1
-      current_player = if switch.odd?
-                         [player1_name, player1_select, player1_choice]
-                       else
-                         [player2_name, player2_select, player2_choice]
-                       end
-    end
-    current_player
-  end
-
-  def combination
-    winning.each do |combos|
-      if combos == player1_select
-        puts "#{player1_name} wins"
-      elsif combos == player2_select
-        puts "#{player2_name} wins"
-      else
-        puts 'DRAW! Friendship wins)'
-      end
-    end
-  end
-
-  def checking
-    index = current_player[2] - 1
-    if array[index].empty? == true
-      array[index] = current_player[1]
-    else
-      puts 'This cell was taken!!! Please, choose another option)'
-    end
+    true
   end
 end

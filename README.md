@@ -5,6 +5,11 @@ Project: OOP by Microverse [Collaborative Project] (created with Saidov Sayyod a
 # Instructions and Game rules
 ## Instructions 
 Tic-tac-toe, noughts and crosses, or Xs and Os is a game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
+=======
+
+## Instructions and Game rules
+# Instructions 
+Tic-tac-toe, noughts and crosses, or Xs and Os is a game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
 
 # Rules
 First, you have to draw the board, which is made up of a 3 x 3 grid of squares. This means it has three rows of three squares.

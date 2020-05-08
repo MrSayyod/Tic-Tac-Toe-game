@@ -1,10 +1,15 @@
 # Tic-Tac-Toe-game
 Project: OOP by Microverse [Collaborative Project] (created with Saidov Sayyod and Hermela Fikre)
+![Tic tac toe game](https://lemmoscripts.com/wp/wp-content/uploads/2018/09/tic-tac-toe-capture-2.gif)
+
+# Instructions and Game rules
+## Instructions 
+Tic-tac-toe, noughts and crosses, or Xs and Os is a game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
+=======
 
 ## Instructions and Game rules
 # Instructions 
 Tic-tac-toe, noughts and crosses, or Xs and Os is a game for two players, X and O, who take turns marking the spaces in a 3×3 grid. The player who succeeds in placing three of their marks in a horizontal, vertical, or diagonal row is the winner.
-![Tic tac toe game](https://lemmoscripts.com/wp/wp-content/uploads/2018/09/tic-tac-toe-capture-2.gif)
 
 # Rules
 First, you have to draw the board, which is made up of a 3 x 3 grid of squares. This means it has three rows of three squares.
@@ -16,15 +21,18 @@ Keep alternating moves until one of the players has drawn a row of three symbols
     Ruby 2.7.1
 
 # Getting Started
-# Prerequisites
+## Prerequisites
     Ruby installed on local machine
     Text editor (preferably: VSCode, Atom, Sublime)
 
-To get a local copy up and running follow these simple 
-example steps.
-    Clone the project unto your local machine
-    cd into the project directory
-    run main.rb in terminal
+## Starting the game
+1. If you have installed `Ruby` on your machine:
+    Clone the project into your local machine using `git clone` command or download the zip file.
+    Go into the project directory using `cd directory name` command.
+    Open your terminal and type `bin/main.rb` command.
+    Enter players' names, select the letters which players play with.
+    In displayed border choose the cells by numbers between 1 and 9 to paste your select ('X' or 'O')
+2. If you have not installed `Ruby`, please, install `Ruby` and repeat step 1. 
 
 # Contributing
 

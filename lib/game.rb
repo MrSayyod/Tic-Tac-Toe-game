@@ -8,7 +8,7 @@ class Game
     @board = arr
   end
 
-  def self.valid_letter?(letter=nil)
+  def self.valid_letter?(letter)
     return true if %w[X O].include?(letter)
   end
 

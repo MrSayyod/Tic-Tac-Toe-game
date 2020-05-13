@@ -13,7 +13,11 @@ describe Game do
   describe '#valid_letter?' do
     it 'checks validity of players\'s choice' do
       expect(Game.valid_letter?('O')).to be true
+    end
+    it 'Checks validity of players\'s choice' do
       expect(Game.valid_letter?('X')).to be true
+    end
+    it 'checks validity of players\'s choice' do
       expect(Game.valid_letter?('W')).to_not be true
     end
   end
@@ -21,21 +25,11 @@ describe Game do
   describe '#current_player' do
     it 'switch players' do
       expect(game.current_player(0)).to be true
+    end
+    it 'switch players' do
       expect(game.current_player(1)).to_not be true
     end
   end
-
-  # describe '#winner?' do
-  #   it 'checks winner' do
-  #     expect(game.winner?).to eql(true)
-  #   end
-  # end
-
-  # describe '#no_winner?' do
-  #   it 'checks draw' do
-  #     expect(game.no_winner?).to eql(true)
-  #   end
-  # end
 
   describe '#valid_position?' do
     random = rand(1..9)

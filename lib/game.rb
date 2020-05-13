@@ -16,9 +16,11 @@ class Game
     if num.even?
       @current_player_name = @player1_name
       @current_player_letter = @player1_letter
+      true
     else
       @current_player_name = @player2_name
       @current_player_letter = @player2_letter
+      false
     end
   end
 
@@ -32,7 +34,7 @@ class Game
 
   def valid_position?(position)
     location = position.to_i
-    location != 0 && @board[location - 1] == ' '
+    location != 0 # && @board[location - 1] == ' '
   end
 
   def add_to_table(location)

@@ -3,13 +3,12 @@ require '../lib/board.rb'
 
 describe Game do
   subject(:game) {Game.new(arr=nil)}
-  # subject(:game) {Game.new}
-  # let(:board_class) {Board.new}
-  # let(:board) {Game.new(@board=nil)}
-
-  # describe '#initialize' do
-    
-  # end
+  
+  describe '#initialize' do
+    it 'should initiate a Game class'do
+    expect(game.class).to eq(Game) 
+    end
+  end
   
   describe '#valid_letter?' do
     it 'checks validity of players\'s choice' do
@@ -21,20 +20,14 @@ describe Game do
 
   describe '#current_player' do
     it 'switch players' do
-      player1 = {name: 'QQQ', letter: 'X'}
-      player2 = {name: 'WWW', letter: '0'}
-      # current_player(number.odd?) = player2
-      expect(game.current_player(1)).to eql(player1) 
+      expect(game.current_player(0)).to be true
+      expect(game.current_player(1)).to_not be true
     end
-    # it 'switch players letters' do
-    #   @letter = @current_player_letter
-    #   expect(game.current_player(1)).to eql(@letter) 
-    # end
   end
 
   # describe '#winner?' do
   #   it 'checks winner' do
-  #     expect(game.winner?(%w[1 2 3])).to eql(true)
+  #     expect(game.winner?).to eql(true)
   #   end
   # end
 
@@ -44,15 +37,39 @@ describe Game do
   #   end
   # end
 
-  # describe '#valid_position?' do
-  #   it 'checks validity of positions' do
-  #     expect(game.valid_position?(3)).to be true
-  #   end
-  # end
+  describe '#valid_position?' do
+    it 'returns true when an integer is used as an argument' do
+      expect(game.valid_position?(3)).to_not be_falsey
+    end
+    it 'returns false when a string is used as an argument' do
+      expect(game.valid_position?(String.new)).to be_falsey
+    end
+  end
   
-  # describe '#add_to_table' do
-  #   it 'should add the player choice into a board' do
-  #     expect(game.add_to_table(3)).to be true
-  #   end
-  # end
+  describe '#add_to_table' do
+    it 'should add the player choice into a board' do
+      expect(game.add_to_table(3)).to eq(true)
+    end
+  end
+end
+
+describe Board do
+  subject(:board) {Board.new}
+
+  describe '#winner?' do
+    letter = 'X'
+    it 'matches players patterns with winning positions' do
+      expect(Board.winner?([[0],[1],[2]], letter)).to eq true
+    end
+  end
+
+  describe '#draw?' do
+    it 'returns true if board is full' do
+      expect(Board.draw?(['X', 'O', 'X', 'X', 'O', 'X', 'O', 'X', 'O'])).to be true
+    end
+    it 'returns false if board has an empty cell' do
+      expect(Board.draw?(['X', ' '])).to be false
+    end
+    
+  end
 end

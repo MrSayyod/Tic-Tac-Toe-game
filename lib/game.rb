@@ -34,7 +34,7 @@ class Game
 
   def valid_position?(position)
     location = position.to_i
-    location != 0 # && @board[location - 1] == ' '
+    location != 0 && @board[location - 1] == ' '
   end
 
   def add_to_table(location)

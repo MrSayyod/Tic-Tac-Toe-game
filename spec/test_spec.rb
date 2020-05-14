@@ -1,5 +1,5 @@
-require '../lib/game.rb'
-require '../lib/board.rb'
+require './lib/game'
+require './lib/board'
 
 describe Game do
   subject(:game) { Game.new([1, 2, 3, 4, 5, 6, 7, 8, 9]) }

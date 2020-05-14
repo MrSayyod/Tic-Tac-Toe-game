@@ -18,17 +18,38 @@ describe Game do
       expect(Game.valid_letter?('X')).to be true
     end
     it 'checks validity of players\'s choice' do
-      expect(Game.valid_letter?('W')).to_not be true
+      expect(Game.valid_letter?('W')).to be nil
     end
   end
 
   describe '#current_player' do
-    it 'switch players' do
-      expect(game.current_player(0)).to be true
+    let(:player1_name) { 'Hermela' }
+    let(:player2_name) { 'Sayyod' }
+
+    context 'when num is even' do
+      let(:num) { 2 }
+
+      it 'check if number is even' do
+        expect(num.even?).to eq(true)
+      end
+
+      it 'should set player 1 name to be current player name' do
+        expect(player1_name).to eq('Hermela')
+      end
+
     end
-    it 'switch players' do
-      expect(game.current_player(1)).to_not be true
+
+    context 'when num isnot even' do
+      let(:num) { 1 }
+      it 'check if number isnot even' do
+        expect(num.odd?).to be true
+      end
+
+      it 'should set player 2 name to be current player name' do
+        expect(player2_name).to eq('Sayyod')
+      end
     end
+
   end
 
   describe '#valid_position?' do
@@ -42,11 +63,12 @@ describe Game do
   end
 
   describe '#add_to_table' do
+    let(:letter) { 'X'}
     arr = Array[1, 2, 3, 4, 5, 6, 7, 8, 9]
     random = rand(1..9)
     arr.delete_at(random - 1)
-    expected = arr.insert(random - 1, nil)
     it 'should add the player choice into a board' do
+      expected = arr.insert(random - 1, letter)
       expect(game.add_to_table(random)).to eq(expected)
     end
   end
@@ -59,6 +81,14 @@ describe Board do
       let(:letter) { 'O' }
       it 'return true' do
         expect(Board.winner?(board, letter)).to eq true
+      end
+    end
+
+    context 'when there is no winner' do
+      let(:board) { ['X', ' ', ' ', 'O', ' ', ' ', 'X', ' ', ' '] }
+      let(:letter) { 'X' }
+      it 'should return false' do
+        expect(Board.winner?(board, letter)).to eq(false)
       end
     end
   end

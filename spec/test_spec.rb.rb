@@ -36,7 +36,6 @@ describe Game do
       it 'should set player 1 name to be current player name' do
         expect(player1_name).to eq('Hermela')
       end
-
     end
 
     context 'when num isnot even' do
@@ -49,7 +48,6 @@ describe Game do
         expect(player2_name).to eq('Sayyod')
       end
     end
-
   end
 
   describe '#valid_position?' do
@@ -63,7 +61,7 @@ describe Game do
   end
 
   describe '#add_to_table' do
-    let(:letter) { 'X'}
+    let(:letter) { 'X' }
     arr = Array[1, 2, 3, 4, 5, 6, 7, 8, 9]
     random = rand(1..9)
     arr.delete_at(random - 1)

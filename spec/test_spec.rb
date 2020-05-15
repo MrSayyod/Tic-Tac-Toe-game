@@ -1,5 +1,5 @@
-require './lib/game'
-require './lib/board'
+require_relative '../lib/game'
+require_relative '../lib/board'
 
 describe Game do
   subject(:game) { Game.new([1, 2, 3, 4, 5, 6, 7, 8, 9]) }
@@ -58,10 +58,15 @@ describe Game do
     it 'returns false when a string is used as an argument' do
       expect(game.valid_position?('')).to be_falsey
     end
+    it 'checks validity when a value is set' do
+      random = rand(1..9)
+      game.add_to_table(random)
+      expect(game.valid_position?(random)).to eql(false)
+    end
   end
 
   describe '#add_to_table' do
-    let(:letter) { 'X' }
+    let(:letter) { nil }
     arr = Array[1, 2, 3, 4, 5, 6, 7, 8, 9]
     random = rand(1..9)
     arr.delete_at(random - 1)
